@@ -1,0 +1,44 @@
+.actionBtn {
+  margin-top: 1em;
+  color: #fff;
+  background: #ff3a3a;
+  border: 1px solid #ff3a3a;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px hsla(0, 100%, 61%, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 10px hsla(0, 100%, 61%, 0.4);
+  }
+
+  &:active {
+    scale: 0.9;
+  }
+
+  &:disabled {
+    background: #ccc;
+    color: #fff;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      scale: 1;
+    }
+  }
+
+  &.btn-secondary {
+    background: #444444;
+    color: #fff;
+    border: 1px solid #444444;
+  }
+}

@@ -1,0 +1,91 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="loginModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            #closeButton
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              placeholder=""
+              name="email"
+              required
+            />
+
+            <small
+              *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="text-danger"
+            >
+              <span *ngIf="email.errors?.['required']">Email is required</span>
+              <span *ngIf="email.errors?.['email']">Email is invalid</span>
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder=""
+              formControlName="password"
+              name="password"
+              required
+            />
+            <small
+              *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="text-danger"
+            >
+              <span *ngIf="password.errors?.['required']"
+                >Password is required</span
+              >
+              <span *ngIf="password.errors?.['minlength']"
+                >Password must be at least 8 characters</span
+              >
+            </small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="actionBtn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="actionBtn"
+            [disabled]="loginForm.invalid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

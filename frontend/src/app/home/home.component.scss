@@ -1,0 +1,151 @@
+.nav-icon {
+  font-size: 1.7rem;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-link {
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0d6be8;
+    transition: width 0.3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.get-started {
+  color: #0d6be8;
+  background: #eef5ff;
+  border: 1px solid #0d6be8;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: #0d6be8;
+    color: #fff;
+  }
+}
+
+.flex-grow-1 {
+  .lead {
+    font-size: 1.2rem;
+  }
+
+  .hero {
+    max-width: 30em;
+    max-height: 30em;
+    width: 100%;
+    height: 100%;
+  }
+
+  .actionBtn {
+    margin-top: 1em;
+    color: #fff;
+    background: #0d6be8;
+    border: 1px solid #0d6be8;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+    &:hover {
+      scale: 1.1;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      scale: 0.9;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    display: block !important;
+    justify-content: center;
+    align-items: center;
+    padding-block: 8em;
+
+    .nav-icon {
+      display: block;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+  }
+
+  .nav > .d-flex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+
+    &:nth-child(1) {
+      margin: 0 !important;
+    }
+  }
+
+  .nav.active {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-icon {
+    display: block;
+  }
+
+  .flex-grow-1 {
+    .display-3 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 1rem;
+    }
+
+    .actionBtn {
+      font-size: 0.8rem;
+    }
+
+    .hero {
+      max-width: 20em;
+      max-height: 20em;
+    }
+  }
+}

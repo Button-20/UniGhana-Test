@@ -1,0 +1,76 @@
+<div
+  class="container-fluid min-vh-100 d-flex justify-content-between flex-column"
+>
+  <nav class="d-flex justify-content-between align-items-center p-4">
+    <a class="logo" routerLink="/home">
+      <img src="assets/images/logo.png" alt="logo" class="img-fluid logo" />
+    </a>
+    <div
+      class="d-flex align-items-center gap-5 nav"
+      [ngClass]="{ active: navActive }"
+    >
+      <div class="d-flex align-items-center gap-5 me-0 me-md-5">
+        <a class="nav-link" routerLink="/home">Home</a>
+        <a class="nav-link" routerLink="/about">About</a>
+        <a class="nav-link" routerLink="/contact">Contact</a>
+      </div>
+      <div class="d-flex align-items-center gap-5">
+        <a
+          class="nav-link text-muted"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+          >Log in</a
+        >
+        <button
+          class="get-started"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#registerModal"
+        >
+          Get Started
+        </button>
+      </div>
+      <div class="nav-icon" (click)="toggleNav()">
+        <i class="bi bi-x"></i>
+      </div>
+    </div>
+    <div class="nav-icon" (click)="toggleNav()">
+      <i class="bi bi-list"></i>
+    </div>
+  </nav>
+  <div class="row flex-grow-1">
+    <div class="col-12 col-md-6 d-flex align-items-center">
+      <div class="p-5">
+        <h1 class="display-3 fw-bold">Create chatbot, and grow your funnel</h1>
+        <p class="lead mb-3 mb-md-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          voluptate, quod, quia, voluptates quae voluptatibus quibusdam
+          voluptatum quidem quos quas nesciunt. Quisquam, quae. Quisquam
+          voluptate, quod, quia, voluptates quae voluptatibus quibusdam
+          voluptatum quidem quos quas nesciunt. Quisquam, quae.
+        </p>
+        <button
+          class="actionBtn"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#registerModal"
+        >
+          Get Started
+        </button>
+      </div>
+    </div>
+    <div
+      class="col-12 col-md-6 d-flex align-items-center justify-content-center"
+    >
+      <img
+        src="assets/illustrations/Admin Control Panel.svg"
+        alt="hero"
+        class="img-fluid hero"
+      />
+    </div>
+  </div>
+</div>
+
+<register></register>
+
+<login></login>
